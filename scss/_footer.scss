@@ -1,0 +1,83 @@
+/* --- Estilos del Footer --- */
+.footer {
+
+    font-family: var(--popins);
+    font-weight: 200;
+
+    bottom: 0px;
+
+
+    background-color: var(--azul);
+
+    width: 100%;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+
+    z-index: 99;
+
+    &__logo {
+
+        width: 100px;
+
+        position: absolute;
+        left: 20px;
+        top: 25%;
+
+    }
+
+    &__block {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+
+    &__navegacion {
+
+        padding: 0px;
+
+        li {
+            list-style: none;
+            margin: 0 20px;
+            font-size: 16px;
+            display: inline-block;
+
+            margin: 15px;
+
+        }
+    }
+
+    &__redes {
+
+
+        a {
+
+            margin: 0 15px;
+
+            img {
+
+                width: 40px;
+
+            }
+        }
+    }
+
+    &__derechos {
+
+        color: var(--blanco);
+        opacity: 0.3;
+        text-align: center;
+        font-weight: 600;
+        font-size: 12px;
+
+        margin-top: 30px;
+
+    }
+}

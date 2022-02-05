@@ -1,0 +1,171 @@
+.main {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+
+    margin: 0;
+    width: 100%;
+    height: 720px;
+
+
+    &__imagen {
+
+        position: absolute;
+
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+
+        width: 100%;
+
+        background-image: url("/img/fondo_todo5.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+        z-index: -1;
+
+    }
+
+    &__texto {
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        width: 720px;
+
+        &__titulo {
+
+            font-family: var(--Rubik);
+            color: var(--blanco);
+            line-height: 80px;
+            word-spacing: -20px;
+            font-size: 80px;
+            font-weight: 200;
+
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+
+            text-align: center;
+            width: 600px;
+        }
+
+        &__subtitulo {
+
+            font-family: var(--popins);
+            font-size: 20px;
+            color: var(--blanco);
+
+            margin-bottom: 60px;
+
+            text-align: center;
+            width: 450px;
+        }
+    }
+
+    /* BOTONES */
+
+
+    &__boton {
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        width: 200px;
+        padding: 10px 10px;
+
+        background: #FBB158;
+        border-radius: 47px;
+
+        &:link {
+
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 100px;
+            transition: all .2s;
+
+            &:visited {
+
+                position: absolute;
+
+            }
+
+        }
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-width: 3px;
+            border-style: solid;
+            border-color: white;
+
+            &::after {
+                transform: scaleX(1.4) scaleY(1.6);
+                opacity: 0;
+            }
+
+        }
+
+        &:active {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        &::after {
+            content: "";
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+            border-radius: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: all .4s;
+        }
+
+        &__texto {
+            color: var(--blanco);
+            font-family: var(--Rubik);
+            font-size: 20px;
+        
+            word-spacing: -8px;
+            letter-spacing: -1px;
+        }
+
+    }
+
+}
+
+/* Cambiar color/tamaño de titulo pequeño */
+.pequeño {
+
+    color: var(--naranja);
+    font-size: 40px;
+    line-height: 30px;
+    margin-bottom: 10px;
+
+}
+
+/* Separacion de letras de titulos */
+
+.separacionLetras {
+
+    letter-spacing: -25px;
+
+}
+
+.separacionPalabras {
+
+    word-spacing: -40px;
+
+}

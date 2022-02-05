@@ -1,0 +1,19 @@
+.header__logo {
+
+    width: 50px;
+
+}
+
+.navbar {
+
+    max-width: 1280px;
+    margin: auto;
+
+    background-color: var(--azul);
+    border-radius: 0 0 15px 15px;
+}
+
+.firefox .navbar {
+    backdrop-filter: none;
+    background-color: var(--bg);
+}

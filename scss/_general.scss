@@ -1,0 +1,66 @@
+/* atributos globales */
+:root {
+
+    --Rubik: 'Rubik Mono One', sans-serif;
+    --popins: 'Poppins', sans-serif;
+    --blanco: #FFF;
+    --negro: #000;
+    --azul: #0099ff;
+    --naranja: #ff6600;
+    --naranja_degradado: linear-gradient(0deg, #f1c999 0%, #ff6600 100%);
+    --naranja_claro: #FBB158;
+    --fondo_pagina: #66c9c9;
+    
+}
+
+html{
+
+background-origin: black;
+
+}
+
+/* Eliminar margen en toda la pagina */
+* {
+
+    margin: 0;
+    padding: 0;
+
+}
+
+h1,h2,h3,h4,h5,h6, p {
+
+    margin: 0;
+    padding: 0;
+
+}
+
+/* dar color y eliminar subrayado a todos los enlaces */
+a {
+
+    font-family: var(--popins);
+    text-decoration: none;
+    color: var(--blanco);
+
+}
+
+/* color de fondo */
+.body {
+
+    background: white;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1280px;
+    font-family: var(--popins);
+
+
+}
+
+
+/* resaltar pagina seleccionada */
+.selected {
+
+    color: var(--naranja);
+
+}
