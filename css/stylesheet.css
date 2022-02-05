@@ -7885,7 +7885,7 @@ a {
     bottom: 0;
     margin: auto;
     width: 100%;
-    background-image: url("/img/fondo_todo5.png");
+    background-image: url("../img/fondo_todo5.png");
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1; }
