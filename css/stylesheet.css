@@ -7816,7 +7816,7 @@ textarea.form-control-lg {
   --popins: 'Poppins', sans-serif;
   --blanco: #FFF;
   --negro: #000;
-  --azul: #0099ff;
+  --azul: #0094ff;
   --naranja: #ff6600;
   --naranja_degradado: linear-gradient(0deg, #f1c999 0%, #ff6600 100%);
   --naranja_claro: #FBB158;
@@ -7997,6 +7997,7 @@ a {
       gap: 5px;
       background-color: white;
       border-radius: 15px;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
       width: 220px;
       height: 150px; }
       .seccion-2__grid__elemento__img {
@@ -8056,7 +8057,7 @@ a {
     .seccion-2__boton__flecha {
       transform: rotate(-90deg); }
 
-.seccion-3 {
+.seccion-4 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -8065,35 +8066,35 @@ a {
   padding: 50px 0 0 0;
   width: 100%;
   height: 720px; }
-  .seccion-3__titulo {
+  .seccion-4__titulo {
     font-weight: 800;
     color: #464646; }
-  .seccion-3__grid {
+  .seccion-4__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px; }
-    .seccion-3__grid__elemento {
+    .seccion-4__grid__elemento {
       position: relative;
       padding-left: 35px;
       padding-top: 35px;
       width: 240px; }
-      .seccion-3__grid__elemento__titulo {
+      .seccion-4__grid__elemento__titulo {
         font-size: 16px;
         font-weight: 800;
         margin-bottom: 10px; }
-      .seccion-3__grid__elemento__subtitulo {
+      .seccion-4__grid__elemento__subtitulo {
         font-size: 12px; }
-      .seccion-3__grid__elemento__img {
+      .seccion-4__grid__elemento__img {
         position: absolute;
         width: 48px;
         height: 40px;
         left: 0px;
         top: 0px;
         z-index: -1; }
-  .seccion-3__img {
+  .seccion-4__img {
     width: 500px; }
 
-.seccion-4 {
+.seccion-5 {
   padding: 50px 0 50px 0;
   width: 100%;
   height: 720px;
@@ -8103,19 +8104,19 @@ a {
   justify-content: flex-start;
   gap: 100px;
   background-color: var(--fondo_pagina); }
-  .seccion-4__titulo {
+  .seccion-5__titulo {
     color: #464646;
     font-weight: 800; }
-  .seccion-4__flex {
+  .seccion-5__flex {
     display: flex;
     flex-wrap: wrap;
     gap: 80px;
     justify-content: center; }
-    .seccion-4__flex__grid {
+    .seccion-5__flex__grid {
       display: grid;
       grid-template-rows: repeat(3, 1fr);
       gap: 20px; }
-      .seccion-4__flex__grid__elemento {
+      .seccion-5__flex__grid__elemento {
         display: flex;
         align-items: center;
         gap: 20px;
@@ -8123,44 +8124,44 @@ a {
         border-radius: 10px;
         width: 350px;
         padding: 10px 20px; }
-        .seccion-4__flex__grid__elemento__contenedor {
+        .seccion-5__flex__grid__elemento__contenedor {
           border-radius: 50px;
           overflow: hidden;
           width: 100px;
           height: 100px; }
-          .seccion-4__flex__grid__elemento__contenedor__img {
+          .seccion-5__flex__grid__elemento__contenedor__img {
             width: 100%;
             height: 100%; }
-        .seccion-4__flex__grid__elemento__texto__titulo {
+        .seccion-5__flex__grid__elemento__texto__titulo {
           font-size: 20px; }
-        .seccion-4__flex__grid__elemento__texto__subtitulo {
+        .seccion-5__flex__grid__elemento__texto__subtitulo {
           font-size: 16px;
           color: var(--naranja); }
-    .seccion-4__flex__elemento {
+    .seccion-5__flex__elemento {
       display: flex;
       flex-direction: column;
       position: relative;
       width: 350px;
       gap: 15px; }
-      .seccion-4__flex__elemento__img {
+      .seccion-5__flex__elemento__img {
         width: 350px;
         top: 0; }
-      .seccion-4__flex__elemento__flex {
+      .seccion-5__flex__elemento__flex {
         position: absolute;
         bottom: 0px;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
         background-color: white;
         border-radius: 10px;
         padding: 20px 40px; }
-        .seccion-4__flex__elemento__flex__titulo {
+        .seccion-5__flex__elemento__flex__titulo {
           font-size: 20px; }
-        .seccion-4__flex__elemento__flex__subtitulo {
+        .seccion-5__flex__elemento__flex__subtitulo {
           font-size: 16px;
           color: var(--naranja); }
-        .seccion-4__flex__elemento__flex__descripcion {
+        .seccion-5__flex__elemento__flex__descripcion {
           font-size: 14px;
           margin: 10px 0; }
-      .seccion-4__flex__elemento__boton {
+      .seccion-5__flex__elemento__boton {
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -8171,25 +8172,25 @@ a {
         background: var(--naranja_claro);
         border-radius: 47px;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
-        .seccion-4__flex__elemento__boton:link {
+        .seccion-5__flex__elemento__boton:link {
           text-decoration: none;
           border-radius: 100px;
           transition: all .2s; }
-          .seccion-4__flex__elemento__boton:link:visited {
+          .seccion-5__flex__elemento__boton:link:visited {
             position: absolute; }
-        .seccion-4__flex__elemento__boton:hover {
+        .seccion-5__flex__elemento__boton:hover {
           transform: translateY(-3px);
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
           border-width: 3px;
           border-style: solid;
           border-color: white; }
-          .seccion-4__flex__elemento__boton:hover::after {
+          .seccion-5__flex__elemento__boton:hover::after {
             transform: scaleX(1.4) scaleY(1.6);
             opacity: 0; }
-        .seccion-4__flex__elemento__boton:active {
+        .seccion-5__flex__elemento__boton:active {
           transform: translateY(-1px);
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
-        .seccion-4__flex__elemento__boton::after {
+        .seccion-5__flex__elemento__boton::after {
           content: "";
           display: inline-block;
           height: 100%;
@@ -8200,28 +8201,28 @@ a {
           left: 0;
           z-index: -1;
           transition: all .4s; }
-        .seccion-4__flex__elemento__boton__texto {
+        .seccion-5__flex__elemento__boton__texto {
           color: var(--blanco);
           font-family: var(--popins);
           font-weight: 600;
           font-size: 12px;
           text-transform: capitalize; }
-        .seccion-4__flex__elemento__boton__flecha {
+        .seccion-5__flex__elemento__boton__flecha {
           transform: rotate(-90deg); }
 
-.seccion-5 {
+.seccion-6 {
   width: 100%;
   height: 720px;
   padding: 50px 120px; }
-  .seccion-5__titulo {
+  .seccion-6__titulo {
     font-weight: 800;
     text-align: center;
     color: #464646;
     margin-bottom: 50px; }
-  .seccion-5__container {
+  .seccion-6__container {
     position: relative;
     z-index: 1; }
-    .seccion-5__container__flex {
+    .seccion-6__container__flex {
       position: absolute;
       display: flex;
       flex-direction: column;
@@ -8232,32 +8233,32 @@ a {
       height: 250px;
       padding: 20px 40px;
       margin: 80px 0; }
-      .seccion-5__container__flex__numeros {
+      .seccion-6__container__flex__numeros {
         display: flex;
         flex-direction: column;
         color: white;
         font-weight: 600; }
-      .seccion-5__container__flex__redes {
+      .seccion-6__container__flex__redes {
         display: flex;
         gap: 15px; }
-    .seccion-5__container__ubicacion {
+    .seccion-6__container__ubicacion {
       position: absolute;
       top: 0px;
       right: 0px;
       z-index: -1; }
-      .seccion-5__container__ubicacion__mapa {
+      .seccion-6__container__ubicacion__mapa {
         border: 2px solid var(--naranja);
         border-radius: 20px;
         width: 800px;
         margin-bottom: 15px; }
-      .seccion-5__container__ubicacion__horario {
+      .seccion-6__container__ubicacion__horario {
         font-weight: 600;
         margin-bottom: 5px; }
-      .seccion-5__container__ubicacion__direccion {
+      .seccion-6__container__ubicacion__direccion {
         font-weight: 400;
         font-size: 14px; }
 
-.seccion-6 {
+.seccion-7 {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8268,10 +8269,10 @@ a {
   gap: 120px;
   padding: 50px 120px;
   background-color: var(--fondo_pagina); }
-  .seccion-6__titulo {
+  .seccion-7__titulo {
     color: #464646;
     font-weight: 800; }
-  .seccion-6__formulario {
+  .seccion-7__formulario {
     width: 600px;
     padding: 20px;
     background-color: #fff;
@@ -8279,14 +8280,14 @@ a {
     backdrop-filter: blur(10px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     border-radius: 20px; }
-    .seccion-6__formulario__contenedor {
+    .seccion-7__formulario__contenedor {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: auto auto 120px auto;
       gap: 20px; }
-      .seccion-6__formulario__contenedor__campo__correo, .seccion-6__formulario__contenedor__campo__mensaje {
+      .seccion-7__formulario__contenedor__campo__correo, .seccion-7__formulario__contenedor__campo__mensaje {
         grid-column: 1 / 3; }
-      .seccion-6__formulario__contenedor__campo__nombre, .seccion-6__formulario__contenedor__campo__servicio, .seccion-6__formulario__contenedor__campo__correo, .seccion-6__formulario__contenedor__campo__mensaje {
+      .seccion-7__formulario__contenedor__campo__nombre, .seccion-7__formulario__contenedor__campo__servicio, .seccion-7__formulario__contenedor__campo__correo, .seccion-7__formulario__contenedor__campo__mensaje {
         width: 100%;
         height: 100%;
         border: 1px solid var(--naranja);
@@ -8295,14 +8296,14 @@ a {
         color: black;
         padding: 10px 10px;
         border-radius: 50px; }
-      .seccion-6__formulario__contenedor__campo__mensaje {
+      .seccion-7__formulario__contenedor__campo__mensaje {
         border-radius: 20px;
         resize: none; }
-    .seccion-6__formulario__boton {
+    .seccion-7__formulario__boton {
       display: flex;
       justify-content: center;
       margin-top: 20px; }
-      .seccion-6__formulario__boton__enviar {
+      .seccion-7__formulario__boton__enviar {
         padding: 10px 120px 10px 10px;
         background-color: #FBB158;
         border-radius: 5px;
@@ -8313,7 +8314,7 @@ a {
         text-transform: uppercase;
         color: var(--blanco); }
 
-.seccion-7 {
+.seccion-3 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -8322,61 +8323,87 @@ a {
   padding: 50px 0 50px 0;
   width: 100%;
   background-color: var(--fondo_pagina); }
-  .seccion-7__titulo {
+  .seccion-3__titulo {
     font-weight: 800;
     color: #464646; }
-  .seccion-7__grid {
+  .seccion-3__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px; }
-    .seccion-7__grid__elemento {
+    .seccion-3__grid__elemento {
       display: flex;
       flex-direction: column;
       gap: 5px;
       align-items: center;
-      padding: 15px;
+      padding: 10px 15px;
       background-color: white;
       border-radius: 10px;
-      width: 200px; }
-      .seccion-7__grid__elemento:hover {
-        border: 1px solid var(--azul); }
-      .seccion-7__grid__elemento__img {
+      transition: box-shadow .2s linear;
+      width: 150px; }
+      .seccion-3__grid__elemento:hover {
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4); }
+      .seccion-3__grid__elemento__img {
         width: 100%; }
-      .seccion-7__grid__elemento__titulo {
+      .seccion-3__grid__elemento__titulo {
         font-size: 14px; }
-      .seccion-7__grid__elemento__descripcion {
-        font-size: 12px; }
-      .seccion-7__grid__elemento__cantidad {
-        width: 40%;
-        height: 18px;
-        text-align: center;
-        font-size: 12px; }
-      .seccion-7__grid__elemento div {
+      .seccion-3__grid__elemento__descripcion {
+        font-size: 12px;
+        line-height: 15px; }
+      .seccion-3__grid__elemento > div {
         display: flex;
-        justify-content: space-between;
-        width: 100%; }
-        .seccion-7__grid__elemento div div {
-          display: flex;
-          justify-content: normal;
-          font-size: 18px; }
-      .seccion-7__grid__elemento__precio {
-        font-size: 24px; }
-      .seccion-7__grid__elemento__boton {
-        display: flex;
-        gap: 5px;
         align-items: center;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+        margin: 5px 0px; }
+        .seccion-3__grid__elemento > div div {
+          display: flex;
+          font-size: 18px; }
+      .seccion-3__grid__elemento__cantidad {
+        border: 1px solid var(--naranja_claro);
+        width: 70px;
+        height: 20px;
+        border-radius: 5px;
+        overflow: hidden; }
+        .seccion-3__grid__elemento__cantidad > button {
+          height: 18px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          background-color: var(--naranja_claro);
+          border: none;
+          width: 50px;
+          height: 100%; }
+        .seccion-3__grid__elemento__cantidad__contador {
+          height: 18px;
+          text-align: center;
+          font-size: 16px;
+          width: 100%;
+          height: 100%;
+          border: none;
+          -moz-appearance: textfield; }
+        .seccion-3__grid__elemento__cantidad__contador::-webkit-inner-spin-button, .seccion-3__grid__elemento__cantidad__contador::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0; }
+      .seccion-3__grid__elemento__precio {
+        font-weight: 600; }
+      .seccion-3__grid__elemento__boton {
+        display: flex;
+        align-items: center;
+        gap: 5px;
         font-size: 12px;
         color: white;
         background-color: #FBB158;
-        border-radius: 5px;
+        border-radius: 50px;
         border: none;
         cursor: pointer;
         padding: 5px 10px; }
-        .seccion-7__grid__elemento__boton__cart {
-          width: 20px; }
-  .seccion-7__carrito {
+        .seccion-3__grid__elemento__boton__cart {
+          width: 15px; }
+  .seccion-3__carrito {
     width: 80%; }
-    .seccion-7__carrito__titulo {
+    .seccion-3__carrito__titulo {
       text-align: center;
       font-weight: 800;
       color: #464646; }

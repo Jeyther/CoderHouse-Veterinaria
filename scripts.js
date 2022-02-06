@@ -17,7 +17,7 @@ let articulos = [{
         descripcion: "esta es la comida de perro numero 1",
         cantidad: 1,
         precio: 60,
-        img: "img/S7/perro/comida_perro-1.jpg"
+        img: "img/S3/perro/comida_perro-1.jpg"
     },
     {
         id: 2,
@@ -25,7 +25,7 @@ let articulos = [{
         descripcion: "esta es la comida de perro numero 2",
         cantidad: 1,
         precio: 100,
-        img: "img/S7/perro/comida_perro-2.jpg"
+        img: "img/S3/perro/comida_perro-2.jpg"
 
     },
     {
@@ -34,7 +34,7 @@ let articulos = [{
         descripcion: "esta es la comida de perro numero 3",
         cantidad: 1,
         precio: 150,
-        img: "img/S7/perro/comida_perro-3.jpg"
+        img: "img/S3/perro/comida_perro-3.jpg"
 
     },
     {
@@ -43,7 +43,7 @@ let articulos = [{
         descripcion: "esta es la comida de perro numero 4",
         cantidad: 1,
         precio: 80,
-        img: "img/S7/perro/comida_perro-4.jpg"
+        img: "img/S3/perro/comida_perro-4.jpg"
 
     },
     {
@@ -52,7 +52,7 @@ let articulos = [{
         descripcion: "esta es la comida de perro numero 5",
         cantidad: 1,
         precio: 300,
-        img: "img/S7/perro/comida_perro-5.jpg"
+        img: "img/S3/perro/comida_perro-5.jpg"
 
     },
     {
@@ -61,7 +61,7 @@ let articulos = [{
         descripcion: "esta es la comida de perro numero 6",
         cantidad: 1,
         precio: 750,
-        img: "img/S7/perro/comida_perro-6.jpg"
+        img: "img/S3/perro/comida_perro-6.jpg"
 
     },
     {
@@ -70,7 +70,7 @@ let articulos = [{
         descripcion: "esta es la comida de perro numero 7",
         cantidad: 1,
         precio: 90,
-        img: "img/S7/perro/comida_perro-7.jpg"
+        img: "img/S3/perro/comida_perro-7.jpg"
 
     },
     {
@@ -79,7 +79,7 @@ let articulos = [{
         descripcion: "esta es la comida de perro numero 8",
         cantidad: 1,
         precio: 210,
-        img: "img/S7/perro/comida_perro-8.jpg"
+        img: "img/S3/perro/comida_perro-8.jpg"
 
     },
 ];
@@ -89,27 +89,31 @@ for (const articulo of articulos) {
 
     document.getElementById('contenedor').innerHTML += `
 
-    <!-- Elemento de la seccion-7 -->
-    <div class="seccion-7__grid__elemento">
+    <!-- Elemento de la seccion-3 -->
+    <div class="seccion-3__grid__elemento">
 
-        <img class="seccion-7__grid__elemento__img" src="${articulo.img}" alt="comida_perro">
+        <img class="seccion-3__grid__elemento__img" src="${articulo.img}" alt="comida_perro">
 
         <p id="id-articulo">${articulo.id}</p>
 
-        <h4 class="seccion-7__grid__elemento__titulo" id="nombre">${articulo.nombre}</h4>
+        <h4 class="seccion-3__grid__elemento__titulo" id="nombre">${articulo.nombre}</h4>
 
-        <p class="seccion-7__grid__elemento__descripcion">${articulo.descripcion}</p>
+        <p class="seccion-3__grid__elemento__descripcion">${articulo.descripcion}</p>
 
-        <input class="seccion-7__grid__elemento__cantidad" id="cantidad" type="number" placeholder="cantidad"
-        min="1" value="1">
-
+        
         <div>
+            <div class="seccion-3__grid__elemento__cantidad">
+            <button id="menos">-</button>
+            <input class="seccion-3__grid__elemento__cantidad__contador" id="cantidad" type="number" placeholder="cantidad"
+            min="1" value="1">
+            <button id="mas">+</button>
+            </div>
             <div>
-                <p class="seccion-7__grid__elemento__precio" id="precio">${articulo.precio}</p>
+                <p class="seccion-3__grid__elemento__precio" id="precio">${articulo.precio}</p>
                 <p>$</p>
             </div>
-            <button class="seccion-7__grid__elemento__boton" id="agregar">Agregar <img src="img/S7/cart.png" class="seccion-7__grid__elemento__boton__cart"> </button>
         </div>
+        <button class="seccion-3__grid__elemento__boton" id="agregar">Agregar <img src="img/S3/cart.png" class="seccion-3__grid__elemento__boton__cart"> </button>
     </div>
     
     `;
@@ -129,11 +133,36 @@ elementos.onclick = function (event) {
 
         if (target.id == 'agregar') {
 
-            agregarProducto(target.parentElement.parentElement);
+            agregarProducto(target.parentElement);
+
+        }
+
+        if (target.id == 'mas' || target.id == 'menos') {
+
+            cambiarCantidad(target);
 
         }
 
         target = target.parentElement;
+
+    }
+
+}
+
+const cambiarCantidad = target => {
+
+    let valor = parseInt(target.parentElement.querySelector("#cantidad").value);
+
+
+    if (target.id == 'mas') {
+
+        valor += 1;
+        target.parentElement.querySelector("#cantidad").value = valor;
+
+    } else if (valor > 1) {
+
+        valor -= 1;
+        target.parentElement.querySelector("#cantidad").value = valor;
 
     }
 
@@ -151,9 +180,6 @@ const agregarProducto = target => {
     );
 
 }
-
-
-
 
 function pasarAJson(articulo) {
     //SE PASAN A JSON TODOS LOS OBJETOS PARA PODER ALMACENARLOS EN EL LOCALSTORAGE
