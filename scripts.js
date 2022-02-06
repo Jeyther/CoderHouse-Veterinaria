@@ -81,11 +81,11 @@ let articulos = [{
         precio: 210,
         img: "img/S3/perro/comida_perro-8.jpg"
 
-    },
+    }
 ];
 
 // CREAR LOS PRODUCTOS EN EL HTML
-for (const articulo of articulos) {
+/* for (const articulo of articulos) {
 
     document.getElementById('contenedor').innerHTML += `
 
@@ -110,6 +110,43 @@ for (const articulo of articulos) {
             </div>
             <div>
                 <p class="seccion-3__grid__elemento__precio" id="precio">${articulo.precio}</p>
+                <p>$</p>
+            </div>
+        </div>
+        <button class="seccion-3__grid__elemento__boton" id="agregar">Agregar <img src="img/S3/cart.png" class="seccion-3__grid__elemento__boton__cart"> </button>
+    </div>
+    
+    `;
+
+} */
+
+
+
+for (let i = 0; i < articulos.length-2; i++) {
+
+    document.getElementById('contenedor').innerHTML += `
+
+    <!-- Elemento de la seccion-3 -->
+    <div class="seccion-3__grid__elemento">
+
+        <img class="seccion-3__grid__elemento__img" src="${articulos[i].img}" alt="comida_perro">
+
+        <p id="id-articulo">${articulos[i].id}</p>
+
+        <h4 class="seccion-3__grid__elemento__titulo" id="nombre">${articulos[i].nombre}</h4>
+
+        <p class="seccion-3__grid__elemento__descripcion">${articulos[i].descripcion}</p>
+
+        
+        <div>
+            <div class="seccion-3__grid__elemento__cantidad">
+            <button id="menos">-</button>
+            <input class="seccion-3__grid__elemento__cantidad__contador" id="cantidad" type="number" placeholder="cantidad"
+            min="1" value="1">
+            <button id="mas">+</button>
+            </div>
+            <div>
+                <p class="seccion-3__grid__elemento__precio" id="precio">${articulos[i].precio}</p>
                 <p>$</p>
             </div>
         </div>
