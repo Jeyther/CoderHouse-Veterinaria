@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "nombre": "Comida Perro 1",
+        "cantidad": 1,
+        "precio": 60
+    },
+    {
+        "id": 2,
+        "nombre": "Comida Perro 2",
+        "cantidad": 1,
+        "precio": 100
+    },
+    {
+        "id": 3,
+        "nombre": "Comida Perro 3",
+        "cantidad": 1,
+        "precio": 150
+    },
+    {
+        "id": 4,
+        "nombre": "Comida Perro 4",
+        "cantidad": 1,
+        "precio": 80
+    },
+    {
+        "id": 5,
+        "nombre": "Comida Perro 5",
+        "cantidad": 1,
+        "precio": 300
+    },
+    {
+        "id": 6,
+        "nombre": "Comida Perro 6",
+        "cantidad": 1,
+        "precio": 750
+    },
+    {
+        "id": 7,
+        "nombre": "Comida Perro 7",
+        "cantidad": 1,
+        "precio": 90
+    },
+    {
+        "id": 8,
+        "nombre": "Comida Perro 8",
+        "cantidad": 1,
+        "precio": 210
+    }
+]
