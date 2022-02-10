@@ -7823,9 +7823,6 @@ textarea.form-control-lg {
   --fondo_pagina: #66c9c9;
   --hover_color: rgba(251, 178, 88, 0.4); }
 
-html {
-  background-color: black; }
-
 /* Eliminar margen en toda la pagina */
 * {
   margin: 0;
