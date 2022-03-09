@@ -408,6 +408,8 @@ $(() => {
         if (!localStorage.getItem(clave)) {
 
             localStorage.setItem(clave, 0);
+            $('#cartWidget-Counter').html('0');
+
 
         } else {
 

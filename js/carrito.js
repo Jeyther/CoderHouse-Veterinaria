@@ -227,8 +227,10 @@ $(() => {
 
             localStorage.setItem(clave, 0);
 
-        } else {
+            $('#cartWidget-Counter').html('0');
 
+        } else {
+            
             $('#cartWidget-Counter').html(`${localStorage.getItem(clave)}`)
 
         }
