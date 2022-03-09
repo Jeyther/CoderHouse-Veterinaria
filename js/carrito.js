@@ -13,6 +13,7 @@ $(() => {
         if (elementos == null || elementos.length == 0) {
 
             $('#contenedor-productos').html(`<p>El carrito esta vacio</p>`);
+            $('#vaciar-carrito').css('display', 'none');
 
         } else {
 
@@ -51,10 +52,10 @@ $(() => {
 
             }
 
-            cargarPrecios();
 
         }
 
+        cargarPrecios();
 
     }
 
@@ -142,6 +143,7 @@ $(() => {
     $('#vaciar-carrito').click(() => {
 
         localStorage.clear();
+        elementos = [];
 
         cargarElementos();
         cargarCartWidgetCount('cartWidgetCount');
@@ -154,12 +156,19 @@ $(() => {
         let igv = 0;
         let total = 0;
 
-        for (const elemento of elementos) {
+        if (elementos == null || elementos.length == 0) {
 
-            total += Number(elemento.precio * elemento.cantidad);
+
+        } else {
+
+            for (const elemento of elementos) {
+
+                total += Number(elemento.precio * elemento.cantidad);
+
+            }
+
 
         }
-
         igv = total * 0.18;
 
         subtotal = total - igv;
