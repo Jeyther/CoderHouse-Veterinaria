@@ -2,49 +2,238 @@
     {
         "id": 1,
         "nombre": "Comida Perro 1",
+        "descripcion": "esta es la comida de perro numero 1",
+        "tipo": "perro",
         "cantidad": 1,
-        "precio": 60
+        "precio": 60,
+        "img": "img/S3/perro/comida_perro-1.jpg"
     },
     {
         "id": 2,
         "nombre": "Comida Perro 2",
+        "descripcion": "esta es la comida de perro numero 2",
+        "tipo": "perro",
         "cantidad": 1,
-        "precio": 100
+        "precio": 100,
+        "img": "img/S3/perro/comida_perro-2.jpg"
+
     },
     {
         "id": 3,
         "nombre": "Comida Perro 3",
+        "descripcion": "esta es la comida de perro numero 3",
+        "tipo": "perro",
         "cantidad": 1,
-        "precio": 150
+        "precio": 150,
+        "img": "img/S3/perro/comida_perro-3.jpg"
+
     },
     {
         "id": 4,
         "nombre": "Comida Perro 4",
+        "descripcion": "esta es la comida de perro numero 4",
+        "tipo": "perro",
         "cantidad": 1,
-        "precio": 80
+        "precio": 80,
+        "img": "img/S3/perro/comida_perro-4.jpg"
+
     },
     {
         "id": 5,
         "nombre": "Comida Perro 5",
+        "descripcion": "esta es la comida de perro numero 5",
+        "tipo": "perro",
         "cantidad": 1,
-        "precio": 300
+        "precio": 300,
+        "img": "img/S3/perro/comida_perro-5.jpg"
+
     },
     {
         "id": 6,
         "nombre": "Comida Perro 6",
+        "descripcion": "esta es la comida de perro numero 6",
+        "tipo": "perro",
         "cantidad": 1,
-        "precio": 750
+        "precio": 750,
+        "img": "img/S3/perro/comida_perro-6.jpg"
+
     },
     {
         "id": 7,
         "nombre": "Comida Perro 7",
+        "descripcion": "esta es la comida de perro numero 7",
+        "tipo": "perro",
         "cantidad": 1,
-        "precio": 90
+        "precio": 90,
+        "img": "img/S3/perro/comida_perro-7.jpg"
+
     },
     {
         "id": 8,
         "nombre": "Comida Perro 8",
+        "descripcion": "esta es la comida de perro numero 8",
+        "tipo": "perro",
         "cantidad": 1,
-        "precio": 210
+        "precio": 210,
+        "img": "img/S3/perro/comida_perro-8.jpg"
+
+    },
+    {
+        "id": 9,
+        "nombre": "Comida Gato 9",
+        "descripcion": "esta es la comida de gato numero 1",
+        "tipo": "gato",
+        "cantidad": 1,
+        "precio": 60,
+        "img": "img/S3/gato/comida_gato-1.jpg"
+    },
+    {
+        "id": 10,
+        "nombre": "Comida Gato 10",
+        "descripcion": "esta es la comida de gato numero 2",
+        "tipo": "gato",
+        "cantidad": 1,
+        "precio": 100,
+        "img": "img/S3/gato/comida_gato-2.jpg"
+
+    },
+    {
+        "id": 11,
+        "nombre": "Comida Gato 11",
+        "descripcion": "esta es la comida de gato numero 3",
+        "tipo": "gato",
+        "cantidad": 1,
+        "precio": 150,
+        "img": "img/S3/gato/comida_gato-3.jpg"
+
+    },
+    {
+        "id": 12,
+        "nombre": "Comida Gato 12",
+        "descripcion": "esta es la comida de gato numero 4",
+        "tipo": "gato",
+        "cantidad": 1,
+        "precio": 80,
+        "img": "img/S3/gato/comida_gato-4.jpg"
+
+    },
+    {
+        "id": 13,
+        "nombre": "Comida Gato 13",
+        "descripcion": "esta es la comida de gato numero 5",
+        "tipo": "gato",
+        "cantidad": 1,
+        "precio": 300,
+        "img": "img/S3/gato/comida_gato-5.jpg"
+
+    },
+    {
+        "id": 14,
+        "nombre": "Comida Gato 14",
+        "descripcion": "esta es la comida de gato numero 6",
+        "tipo": "gato",
+        "cantidad": 1,
+        "precio": 750,
+        "img": "img/S3/gato/comida_gato-6.jpg"
+
+    },
+    {
+        "id": 15,
+        "nombre": "Comida Gato 15",
+        "descripcion": "esta es la comida de gato numero 7",
+        "tipo": "gato",
+        "cantidad": 1,
+        "precio": 90,
+        "img": "img/S3/gato/comida_gato-7.jpg"
+
+    },
+    {
+        "id": 16,
+        "nombre": "Comida Gato 16",
+        "descripcion": "esta es la comida de gato numero 8",
+        "tipo": "gato",
+        "cantidad": 1,
+        "precio": 210,
+        "img": "img/S3/gato/comida_gato-8.jpg"
+
+    },
+    {
+        "id": 17,
+        "nombre": "Comida Ave 17",
+        "descripcion": "esta es la comida de ave numero 1",
+        "tipo": "ave",
+        "cantidad": 1,
+        "precio": 60,
+        "img": "img/S3/ave/comida_ave-1.jpg"
+    },
+    {
+        "id": 18,
+        "nombre": "Comida Ave 18",
+        "descripcion": "esta es la comida de ave numero 2",
+        "tipo": "ave",
+        "cantidad": 1,
+        "precio": 100,
+        "img": "img/S3/ave/comida_ave-2.jpg"
+
+    },
+    {
+        "id": 19,
+        "nombre": "Comida Ave 19",
+        "descripcion": "esta es la comida de ave numero 3",
+        "tipo": "ave",
+        "cantidad": 1,
+        "precio": 150,
+        "img": "img/S3/ave/comida_ave-3.jpg"
+
+    },
+    {
+        "id": 20,
+        "nombre": "Comida Ave 20",
+        "descripcion": "esta es la comida de ave numero 4",
+        "tipo": "ave",
+        "cantidad": 1,
+        "precio": 80,
+        "img": "img/S3/ave/comida_ave-4.jpg"
+
+    },
+    {
+        "id": 21,
+        "nombre": "Comida Ave 21",
+        "descripcion": "esta es la comida de ave numero 5",
+        "tipo": "ave",
+        "cantidad": 1,
+        "precio": 300,
+        "img": "img/S3/ave/comida_ave-5.jpg"
+
+    },
+    {
+        "id": 22,
+        "nombre": "Comida Ave 22",
+        "descripcion": "esta es la comida de ave numero 6",
+        "tipo": "ave",
+        "cantidad": 1,
+        "precio": 750,
+        "img": "img/S3/ave/comida_ave-6.jpg"
+
+    },
+    {
+        "id": 23,
+        "nombre": "Comida Ave 23",
+        "descripcion": "esta es la comida de ave numero 7",
+        "tipo": "ave",
+        "cantidad": 1,
+        "precio": 90,
+        "img": "img/S3/ave/comida_ave-7.jpg"
+
+    },
+    {
+        "id": 24,
+        "nombre": "Comida Ave 24",
+        "descripcion": "esta es la comida de ave numero 8",
+        "tipo": "ave",
+        "cantidad": 1,
+        "precio": 210,
+        "img": "img/S3/ave/comida_ave-8.jpg"
+
     }
 ]

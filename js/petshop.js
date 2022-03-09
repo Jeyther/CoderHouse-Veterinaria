@@ -1,274 +1,80 @@
 $(() => {
 
-    class Articulo {
-        constructor(id, nombre, cantidad, precio) {
-            this.id = id;
-            this.nombre = nombre;
-            this.cantidad = cantidad;
-            this.precio = precio;
-        }
-    }
-
     let pagina = 1;
 
-    // INICIO ARTICULOS DEL PETSHOP
-    let articulosPerro = [{
-            id: 1,
-            nombre: "Comida Perro 1",
-            descripcion: "esta es la comida de perro numero 1",
-            cantidad: 1,
-            precio: 60,
-            img: "img/S3/perro/comida_perro-1.jpg"
-        },
-        {
-            id: 2,
-            nombre: "Comida Perro 2",
-            descripcion: "esta es la comida de perro numero 2",
-            cantidad: 1,
-            precio: 100,
-            img: "img/S3/perro/comida_perro-2.jpg"
+    // TODOS LOS PRODUCTOS
+    let articulos;
 
-        },
-        {
-            id: 3,
-            nombre: "Comida Perro 3",
-            descripcion: "esta es la comida de perro numero 3",
-            cantidad: 1,
-            precio: 150,
-            img: "img/S3/perro/comida_perro-3.jpg"
+    // PETICION AJAX A LOS ARTICULOS DEL PETSHOP
+    const URLJSON = "./js/articulos.json";
 
-        },
-        {
-            id: 4,
-            nombre: "Comida Perro 4",
-            descripcion: "esta es la comida de perro numero 4",
-            cantidad: 1,
-            precio: 80,
-            img: "img/S3/perro/comida_perro-4.jpg"
+    $.getJSON(URLJSON, function (respuesta, estado) {
 
-        },
-        {
-            id: 5,
-            nombre: "Comida Perro 5",
-            descripcion: "esta es la comida de perro numero 5",
-            cantidad: 1,
-            precio: 300,
-            img: "img/S3/perro/comida_perro-5.jpg"
+        if (estado === 'success') {
 
-        },
-        {
-            id: 6,
-            nombre: "Comida Perro 6",
-            descripcion: "esta es la comida de perro numero 6",
-            cantidad: 1,
-            precio: 750,
-            img: "img/S3/perro/comida_perro-6.jpg"
+            articulos = respuesta;
 
-        },
-        {
-            id: 7,
-            nombre: "Comida Perro 7",
-            descripcion: "esta es la comida de perro numero 7",
-            cantidad: 1,
-            precio: 90,
-            img: "img/S3/perro/comida_perro-7.jpg"
+        } else {
 
-        },
-        {
-            id: 8,
-            nombre: "Comida Perro 8",
-            descripcion: "esta es la comida de perro numero 8",
-            cantidad: 1,
-            precio: 210,
-            img: "img/S3/perro/comida_perro-8.jpg"
+            console.log("hubo un error al cargar los datos del JSON.... Intente de nuevo");
 
         }
-    ];
-    let articulosGato = [{
-            id: 1,
-            nombre: "Comida Gato 1",
-            descripcion: "esta es la comida de gato numero 1",
-            cantidad: 1,
-            precio: 60,
-            img: "img/S3/gato/comida_gato-1.jpg"
-        },
-        {
-            id: 2,
-            nombre: "Comida Gato 2",
-            descripcion: "esta es la comida de gato numero 2",
-            cantidad: 1,
-            precio: 100,
-            img: "img/S3/gato/comida_gato-2.jpg"
 
-        },
-        {
-            id: 3,
-            nombre: "Comida Gato 3",
-            descripcion: "esta es la comida de gato numero 3",
-            cantidad: 1,
-            precio: 150,
-            img: "img/S3/gato/comida_gato-3.jpg"
+        //CREACION DE ELEMENTOS EN EL DOM
+        comidaTodos();
 
-        },
-        {
-            id: 4,
-            nombre: "Comida Gato 4",
-            descripcion: "esta es la comida de gato numero 4",
-            cantidad: 1,
-            precio: 80,
-            img: "img/S3/gato/comida_gato-4.jpg"
-
-        },
-        {
-            id: 5,
-            nombre: "Comida Gato 5",
-            descripcion: "esta es la comida de gato numero 5",
-            cantidad: 1,
-            precio: 300,
-            img: "img/S3/gato/comida_gato-5.jpg"
-
-        },
-        {
-            id: 6,
-            nombre: "Comida Gato 6",
-            descripcion: "esta es la comida de gato numero 6",
-            cantidad: 1,
-            precio: 750,
-            img: "img/S3/gato/comida_gato-6.jpg"
-
-        },
-        {
-            id: 7,
-            nombre: "Comida Gato 7",
-            descripcion: "esta es la comida de gato numero 7",
-            cantidad: 1,
-            precio: 90,
-            img: "img/S3/gato/comida_gato-7.jpg"
-
-        },
-        {
-            id: 8,
-            nombre: "Comida Gato 8",
-            descripcion: "esta es la comida de gato numero 8",
-            cantidad: 1,
-            precio: 210,
-            img: "img/S3/gato/comida_gato-8.jpg"
-
-        }
-    ];
-    let articulosAve = [{
-            id: 1,
-            nombre: "Comida Ave 1",
-            descripcion: "esta es la comida de ave numero 1",
-            cantidad: 1,
-            precio: 60,
-            img: "img/S3/ave/comida_ave-1.jpg"
-        },
-        {
-            id: 2,
-            nombre: "Comida Ave 2",
-            descripcion: "esta es la comida de ave numero 2",
-            cantidad: 1,
-            precio: 100,
-            img: "img/S3/ave/comida_ave-2.jpg"
-
-        },
-        {
-            id: 3,
-            nombre: "Comida Ave 3",
-            descripcion: "esta es la comida de ave numero 3",
-            cantidad: 1,
-            precio: 150,
-            img: "img/S3/ave/comida_ave-3.jpg"
-
-        },
-        {
-            id: 4,
-            nombre: "Comida Ave 4",
-            descripcion: "esta es la comida de ave numero 4",
-            cantidad: 1,
-            precio: 80,
-            img: "img/S3/ave/comida_ave-4.jpg"
-
-        },
-        {
-            id: 5,
-            nombre: "Comida Ave 5",
-            descripcion: "esta es la comida de ave numero 5",
-            cantidad: 1,
-            precio: 300,
-            img: "img/S3/ave/comida_ave-5.jpg"
-
-        },
-        {
-            id: 6,
-            nombre: "Comida Ave 6",
-            descripcion: "esta es la comida de ave numero 6",
-            cantidad: 1,
-            precio: 750,
-            img: "img/S3/ave/comida_ave-6.jpg"
-
-        },
-        {
-            id: 7,
-            nombre: "Comida Ave 7",
-            descripcion: "esta es la comida de ave numero 7",
-            cantidad: 1,
-            precio: 90,
-            img: "img/S3/ave/comida_ave-7.jpg"
-
-        },
-        {
-            id: 8,
-            nombre: "Comida Ave 8",
-            descripcion: "esta es la comida de ave numero 8",
-            cantidad: 1,
-            precio: 210,
-            img: "img/S3/ave/comida_ave-8.jpg"
-
-        }
-    ];
-    // FIN ARTICULOS DEL PETSHOP
+    });
 
     //REALIZA UNA ITERACIÓN POR CADA ARTICULO DEPENDIENDO DEL TIPO DE ANIMAL
-
     const comidaPerros = () => {
 
-        for (let i = 0; i < articulosPerro.length; i++) {
+        for (const articulo of articulos) {
 
-            crearArticulo(articulosPerro[i]);
+            if (articulo.tipo === 'perro') {
+
+                crearArticulo(articulo);
+
+            }
 
         }
 
     }
 
     const comidaGatos = () => {
-        for (let i = 0; i < articulosGato.length; i++) {
 
-            crearArticulo(articulosGato[i]);
+        for (const articulo of articulos) {
+
+            if (articulo.tipo === 'gato') {
+
+                crearArticulo(articulo);
+
+            }
 
         }
     }
 
     const comidaAves = () => {
-        for (let i = 0; i < articulosAve.length; i++) {
 
-            crearArticulo(articulosAve[i]);
+        for (const articulo of articulos) {
+
+            if (articulo.tipo === 'ave') {
+
+                crearArticulo(articulo);
+
+            }
 
         }
     }
 
     const comidaTodos = () => {
 
-        const articulosTodos = articulosPerro.concat(articulosGato, articulosAve);
-
         switch (pagina) {
 
             case 1:
 
-                for (let i = 0; i < articulosTodos.length - 14; i++) {
+                for (let i = 0; i < articulos.length - 14; i++) {
 
-                    crearArticulo(articulosTodos[i]);
+                    crearArticulo(articulos[i]);
 
                 }
 
@@ -276,9 +82,9 @@ $(() => {
 
             case 2:
 
-                for (let i = 10; i < articulosTodos.length - 4; i++) {
+                for (let i = 10; i < articulos.length - 4; i++) {
 
-                    crearArticulo(articulosTodos[i]);
+                    crearArticulo(articulos[i]);
 
                 }
 
@@ -286,9 +92,9 @@ $(() => {
 
             case 3:
 
-                for (let i = 20; i < articulosTodos.length; i++) {
+                for (let i = 20; i < articulos.length; i++) {
 
-                    crearArticulo(articulosTodos[i]);
+                    crearArticulo(articulos[i]);
 
                 }
 
@@ -302,8 +108,8 @@ $(() => {
 
     }
 
-    //CREACION DE ELEMENTOS EN EL DOM
-    comidaTodos();
+    // CARGA LA CANTIDAD DE PRODUCTOS EN EL CONTADOR DEL CARRITO
+    cargarCartWidgetCount('cartWidgetCount');
 
     function crearArticulo(articulo) {
 
@@ -312,15 +118,15 @@ $(() => {
             <!-- Elemento del petshop -->
             <div class="petshop__contenedor__productos__elemento">
 
-                <a href='#'>
+                <a href='producto.html' id='producto-seleccionado'>
 
-                    <img class="petshop__contenedor__productos__elemento__img" src="${articulo.img}" alt="comida_perro">
+                    <img class="petshop__contenedor__productos__elemento__img" src="${articulo.img}" alt="${articulo.nombre}">
 
-                    <p id="id-articulo">${articulo.id}</p>
+                    <p id="id-producto">${articulo.id}</p>
 
                     <h4 class="petshop__contenedor__productos__elemento__titulo" id="nombre">${articulo.nombre}</h4>
 
-                    <p class="petshop__contenedor__productos__elemento__descripcion">${articulo.descripcion}</p>
+                    <p class="petshop__contenedor__productos__elemento__descripcion" id="descripcion">${articulo.descripcion}</p>
 
                 </a>
 
@@ -340,7 +146,7 @@ $(() => {
 
                 </div>
 
-                <button class="petshop__contenedor__productos__elemento__boton" id="agregar">Agregar <img src="img/S3/cart.png" class="seccion-3__grid__elemento__boton__cart"> </button>
+                <button class="petshop__contenedor__productos__elemento__boton" id="agregar">Agregar<img src="img/S3/cart.png" class="petshop__contenedor__productos__elemento__boton__cart"> </button>
 
             </div>
     
@@ -357,14 +163,31 @@ $(() => {
 
             if (target.id == 'agregar') {
 
-                agregarProducto(target.parentElement);
+                let articulo = crearObjeto(target.parentElement);
+
+                cartWidgetCount(articulo.cantidad);
+
+                almacenarEnLocalStorage('elementos', articulo);
+
                 return;
+
+            }
+
+            if (target.id == 'producto-seleccionado') {
+
+                let articulo = crearObjeto(target.parentElement);
+
+                almacenarEnStorageProductoSeleccionado('seleccionado', articulo);
+
+                return;
+
 
             }
 
             if (target.id == 'mas' || target.id == 'menos') {
 
                 cambiarCantidad(target);
+
                 return;
 
             }
@@ -372,6 +195,7 @@ $(() => {
             target = target.parentElement;
 
         }
+
 
     });
 
@@ -531,49 +355,138 @@ $(() => {
     }
 
     //SE CREA UN OBJETO DE LA CLASE ARTICULO PARA LUEGO PASARLO A JSON
-    const agregarProducto = target => {
+    const crearObjeto = target => {
 
-        pasarAJson(
+        let producto;
 
-            new Articulo(
-                target.querySelector("#id-articulo").textContent,
-                target.querySelector("#nombre").textContent,
-                parseInt(target.querySelector("#cantidad").value),
-                parseFloat(target.querySelector("#precio").textContent)
-            )
+        for (const articulo of articulos) {
 
-        );
+            if (articulo.id == target.querySelector("#id-producto").textContent) {
+
+                producto = {
+
+                    id: articulo.id,
+                    nombre: articulo.nombre,
+                    descripcion: articulo.descripcion,
+                    cantidad: parseInt(target.querySelector("#cantidad").value),
+                    precio: articulo.precio,
+                    img: articulo.img
+
+                };
+
+            }
+
+        }
+
+        return producto;
 
     }
 
-    //SE PASAN A JSON TODOS CADA OBJETO SELECCIONADO PARA PODER ALMACENARLOS EN EL LOCALSTORAGE
-    function pasarAJson(articulo) {
+    const cartWidgetCount = (cantidad) => {
 
-        let json = JSON.stringify(articulo);
+        const clave = 'cartWidgetCount';
+        const valor = cantidad;
 
-        almacenarEnStorage(articulo.id, json);
+        if (!localStorage.getItem(clave)) {
+
+            localStorage.setItem(clave, valor);
+
+        } else {
+
+            let dataStorage = JSON.parse(localStorage.getItem(clave));
+            dataStorage += valor;
+            localStorage.setItem(clave, dataStorage);
+
+        }
+
+        cargarCartWidgetCount(clave);
+
     }
 
-    function almacenarEnStorage(clave, valor) {
+    function cargarCartWidgetCount(clave) {
+
+        if (!localStorage.getItem(clave)) {
+
+            localStorage.setItem(clave, 0);
+
+        } else {
+
+            $('#cartWidget-Counter').html(`${localStorage.getItem(clave)}`)
+
+        }
+
+    };
+
+    function almacenarEnLocalStorage(clave, valor) {
         /*
     EN ESTA CONDICION, ESTAMOS DICIENDO: 
     "SI NO EXISTE LA VARIABLE DE localStorage clave"
     REALIZAREMOS LO SIGUIENTE
    */
 
-        if (!localStorage.getItem(clave)) {
-            //AGREGAMOS EL OBJETO AL LOCALSTORAGE
-            localStorage.setItem(clave, valor);
+        let elementos;
+
+        elementos = obtenerProductosLocalStorage();
+
+        if (elementos.length === 0) {
+
+            elementos.push(valor);
+
         } else {
-            // SI YA EXISTIA ENTONCES LA OBTENEMOS Y GUARDAMOS EN UNA VARIABLE
-            let dataStorage = JSON.parse(localStorage.getItem(clave));
-            //MODIFICAMOS SOLO LA CANTIDAD
-            dataStorage.cantidad = dataStorage.cantidad + JSON.parse(valor).cantidad;
-            //SOBREESCRIBIMOS LA VARIABLE de localStorage
-            localStorage.setItem(clave, JSON.stringify(dataStorage));
+
+            let yaExiste = false;
+
+            for (const elemento of elementos) {
+
+                if (elemento.id === valor.id) {
+
+                    elemento.cantidad += valor.cantidad;
+
+                    yaExiste = true;
+
+                }
+
+            }
+
+            if (!yaExiste) elementos.push(valor);
+
         }
 
-        // agregarAlCarrito();
+        localStorage.setItem(clave, JSON.stringify(elementos));
+
+    }
+
+
+    /* Funcion para almanecar SOLO 1 producto, para utilizarlo luego en la vista de producto.html */
+    function almacenarEnStorageProductoSeleccionado(clave, valor) {
+
+        if (localStorage.getItem(clave)) {
+
+            //ELIMINO EL OBJETO DEL LOCALSTORAGE SI YA EXISTIA
+            localStorage.removeItem(clave);
+
+        }
+        //AGREGAMOS EL OBJETO AL LOCALSTORAGE
+        localStorage.setItem(clave, JSON.stringify(valor));
+
+    }
+
+    function obtenerProductosLocalStorage() {
+
+        let elementos;
+
+        if (localStorage.getItem('elementos') === null) {
+
+            elementos = [];
+
+        } else {
+
+            elementos = JSON.parse(localStorage.getItem('elementos'));
+
+        }
+
+        return elementos;
+
     }
 
 });

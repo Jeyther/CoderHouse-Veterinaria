@@ -17,3 +17,29 @@
     backdrop-filter: none;
     background-color: var(--bg);
 }
+
+.nav-link{
+
+    position: relative;
+
+}
+
+#cartWidget-Counter{
+
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    right: 0px;
+    bottom: -5px;
+    font-size: 12px;
+    background-color: red;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+
+}

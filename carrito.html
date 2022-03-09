@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Rubik+Mono+One&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" href="./img/favicon.ico" type="favicon">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <title>Servicios Veterinarios</title>
+</head>
+
+<body class="body">
+
+    <!-- Inicio del header -->
+    <div id="container">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top justify-content-md-center justify-content-start">
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="index.html">
+                    <img class="header__logo " src="img/LOGO.png" alt="CryptoTokenKoin">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between align-items-center w-100"
+                    id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto text-md-center text-left ">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html#S2">Servicios</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/petshop.html">PetShop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/index.html#S4">Ventajas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html#S5">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html#S7">Contacto</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav flex-row justify-content-md-left justify-content-start flex-nowrap">
+                        <li class="nav-item"><a class="nav-link" 
+                            href="carrito.html"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="30" height="30" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                                </svg>
+                                <p id="cartWidget-Counter">0</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- fin del header -->
+
+    <!-- Inicio del Main (Seccion 1) -->
+    <main class="carrito">
+
+        <div class="carrito__contenedor">
+
+            <div class="carrito__contenedor__productos">
+
+                <h2 class="carrito__contenedor__productos__titulo">Carrito</h2>
+
+                <div class="carrito__contenedor__productos__elementos" id="contenedor-productos"></div>
+
+                <button id="vaciar-carrito">Vaciar Carrito</button>
+
+            </div>
+
+            <div class="carrito__contenedor__valores">
+
+                <div class="carrito__contenedor__valores__despacho">
+
+                    <h4 class="carrito__contenedor__valores__despacho__titulo">Despacho:</h4>
+
+                    <div class="carrito__contenedor__valores__despacho__radioButtons">
+
+                        <div>
+                            <label>
+                                <input type="radio" name="despacho" value="tienda" checked
+                                    class="carrito__contenedor__valores__despacho__radioButtons__tienda despacho">Recojo
+                                en Tienda</input>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input type="radio" name="despacho" value="domicilio" 
+                                    class="carrito__contenedor__valores__despacho__radioButtons__domicilio despacho">Envio
+                                a
+                                Domicilio
+                            </label>
+                        </div>
+
+                    </div>
+
+                    <p class="carrito__contenedor__valores__despacho__descripcion">El envio a domicilio tiene una
+                        recarga de 5$ en el precio total</p>
+
+                </div>
+
+                <div class="carrito__contenedor__valores__descuento">
+
+                    <h4 class="carrito__contenedor__valores__descuento__titulo">Cupón de Descuento</h4>
+
+                    <div class="carrito__contenedor__valores__descuento__input">
+
+                        <input type="text" id="descuento-input"
+                            class="carrito__contenedor__valores__descuento__input__texto" placeholder="Ingresar aqui">
+                        <button id="aplicar"
+                            class="carrito__contenedor__valores__descuento__input__boton">Aplicar</button>
+
+                    </div>
+
+                    <div id="validador-descuento"></div>
+
+                    <p class="carrito__contenedor__valores__descuento__descripcion">Ingresa el cupón "PET20" para
+                        obtener un 20% de descuento en su primera compra</p>
+
+                </div>
+
+                <div class="carrito__contenedor__valores__costos">
+
+                    <h4 class="carrito__contenedor__valores__costos__titulo">Precio Total:</h4>
+
+                    <div class="carrito__contenedor__valores__costos__flex">
+
+                        <div>
+                            <p>Subtotal:</p>
+                            <div>
+                                <p id="subtotal">0</p>
+                                <p>$</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p>I.G.V. (18%):</p>
+                            <div>
+                                <p id="igv">0</p <p>$</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p>Envio:</p>
+                            <div>
+                                <p id="envio">0</p>
+                                <p>$</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p>Descuento:</p>
+                            <div>
+                                <p id="descuento">0</p>
+                                <p>$</p>
+                            </div>
+                        </div>
+
+                        <div class="carrito__contenedor__valores__costos__flex__total">
+                            <p>Total:</p>
+                            <div>
+                                <p id="total">0</p>
+                                <p>$</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <button class="carrito__contenedor__valores__boton">Ir a pagar <img src="/img/flecha_abajo.png"
+                        alt="flecha"></button>
+
+            </div>
+
+        </div>
+
+    </main>
+    <!-- Fin del Main (Seccion 1) -->
+
+    <!-- Inicio del Footer -->
+    <footer class="footer">
+
+        <img class="footer__logo" src="img/LOGO.png" alt="jeyther tech">
+
+        <div class="footer__block">
+
+            <div class="footer__redes">
+
+                <a target="_blank" href="https://www.facebook.com/JeytherTech" class="Facebook"><img
+                        src="img/redes/facebook.png" alt="facebook"></a>
+                <a target="_blank" href="https://www.instagram.com/jeyther_tech/" class="Instagram"><img
+                        src="img/redes/instagram.png" alt="instagram"></a>
+                <a target="_blank" href="https://www.youtube.com/c/JeytherTech" class="Youtube"><img
+                        src="img/redes/youtube.png" alt="youtube"></a>
+                <a target="_blank" href="https://twitter.com/JeytherJYS" class="Twiiter"><img
+                        src="img/redes/twitter.png" alt="twitter"></a>
+                <a target="_blank" href="mailto:jeyther13@gmail.com" class="Correo"><img src="img/redes/correo.png"
+                        alt="correo"></a>
+
+            </div>
+
+
+            <p class="footer__derechos">Diseñado por Jeyther Yriza - Todos los derechos reservados. Proyecto
+                Javascript.
+                CODERHOUSE 2021.</p>
+        </div>
+
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/articulos.json"></script>
+    <script type="text/javascript" src="js/carrito.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,292 @@
+#precio {
+
+    font-size: 22px;
+
+}
+
+#validador-descuento {
+
+    margin-top: -10px;
+
+}
+
+#eliminar{
+
+    background-color: red;
+    border: none;
+    border-radius: 20px;
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#vaciar-carrito{
+
+    border: none;
+    border-radius: 25px;
+    width: 120px;
+    height: 30px;
+    color: white;
+    background-color: red;
+    font-size: 14px;
+    
+
+}
+
+.carrito {
+
+    padding: 100px 80px;
+    width: 100%;
+
+    &__contenedor {
+
+        display: flex;
+        justify-content: space-between;
+
+        // gap: 20px;
+
+        &__productos {
+
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            &__titulo {
+
+                font-size: 32px;
+                margin-bottom: 20px;
+
+            }
+
+            &__elementos {
+
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                &__elemento {
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 35px;
+
+                    &__img {
+
+                        width: 100px;
+
+                    }
+
+                    &__texto {
+
+                        &__titulo {
+
+                            font-size: 16px;
+
+                        }
+
+                        &__descripcion {
+
+                            font-size: 12px;
+
+                        }
+
+                    }
+
+                    &__precio {
+
+                        display: flex;
+                        gap: 5px;
+
+                    }
+
+                    &__cantidad {
+
+                        font-size: 20px;
+                        margin: 0px 10px;
+
+                    }
+
+                    & svg {
+
+                        color: rgb(255, 255, 255);
+
+                    }
+
+                }
+            }
+
+        }
+
+        &__valores {
+
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            padding: 10px 20px;
+            border-radius: 15px;
+            width: 350px;
+            height: 530px;
+
+            background-color: rgba(0, 0, 0, 0.05);
+
+            & h4 {
+
+                font-size: 18px;
+                margin-bottom: 15px;
+
+            }
+
+            &__despacho {
+
+                display: flex;
+                flex-direction: column;
+
+                &__radioButtons {
+
+                    display: flex;
+                    align-items: center;
+                    justify-items: center;
+                    gap: 20px;
+
+                    font-size: 14px;
+
+                    &>div>label {
+
+                        display: flex;
+                        gap: 5px;
+                        align-items: center;
+                        justify-content: center;
+
+                    }
+
+                }
+
+                &__descripcion {
+
+                    font-size: 12px;
+                    opacity: 60%;
+
+                }
+
+            }
+
+            &__descuento {
+
+                &__input {
+
+                    display: flex;
+                    border-radius: 50px;
+                    width: 300px;
+                    border: 4px solid var(--naranja_claro);
+                    overflow: hidden;
+                    margin-bottom: 10px;
+
+                    &__texto {
+
+                        height: 40px;
+                        width: 220px;
+                        appearance: none;
+                        outline: none;
+                        border: none;
+                        padding-left: 10px;
+
+                        &::placeholder {
+
+                            padding-left: 10px;
+
+                        }
+
+                    }
+
+                    &__boton {
+
+                        color: white;
+                        appearance: none;
+                        border: none;
+                        background-color: var(--naranja_claro);
+                        padding-right: 20px;
+                        padding-left: 10px;
+
+                    }
+
+                }
+
+                &__descripcion {
+
+                    font-size: 12px;
+                    opacity: 60%;
+
+                }
+
+            }
+
+            &__costos {
+
+                display: flex;
+                flex-direction: column;
+
+                &__flex {
+
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 14px;
+
+                    &>div {
+
+                        display: flex;
+                        justify-content: space-between;
+
+                        &>div {
+
+                            display: flex;
+
+                        }
+
+                    }
+
+                    &__total {
+
+                        font-size: 22px;
+
+                    }
+
+                }
+
+            }
+
+            &__boton {
+
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                position: relative;
+
+                width: 150px;
+                padding: 5px 5px;
+                margin: 0px auto;
+
+                background: #FBB158;
+                border-radius: 47px;
+                border: none;
+
+                color: white;
+
+                &>img {
+
+                    transform: rotate(-90deg);
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

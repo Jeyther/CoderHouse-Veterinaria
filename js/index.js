@@ -1,108 +1,49 @@
 $(() => {
 
-    class Articulo {
-        constructor(id, nombre, cantidad, precio) {
-            this.id = id;
-            this.nombre = nombre;
-            this.cantidad = cantidad;
-            this.precio = precio;
-        }
-    }
+    // TODOS LOS PRODUCTOS
+    let articulos;
 
-    // VACIADO DEL LOCAL STORAGE
-    localStorage.clear();
+    // PETICION AJAX A LOS ARTICULOS DEL PETSHOP
+    const URLJSON = "./js/articulos.json";
 
-    // ARRAY CON LOS PRODUCTOS DE LA TIENDA
-    let articulos = [{
-            id: 1,
-            nombre: "Comida Perro 1",
-            descripcion: "esta es la comida de perro numero 1",
-            cantidad: 1,
-            precio: 60,
-            img: "img/S3/perro/comida_perro-1.jpg"
-        },
-        {
-            id: 2,
-            nombre: "Comida Perro 2",
-            descripcion: "esta es la comida de perro numero 2",
-            cantidad: 1,
-            precio: 100,
-            img: "img/S3/perro/comida_perro-2.jpg"
+    $.getJSON(URLJSON, function (respuesta, estado) {
 
-        },
-        {
-            id: 3,
-            nombre: "Comida Perro 3",
-            descripcion: "esta es la comida de perro numero 3",
-            cantidad: 1,
-            precio: 150,
-            img: "img/S3/perro/comida_perro-3.jpg"
+        if (estado === 'success') {
 
-        },
-        {
-            id: 4,
-            nombre: "Comida Perro 4",
-            descripcion: "esta es la comida de perro numero 4",
-            cantidad: 1,
-            precio: 80,
-            img: "img/S3/perro/comida_perro-4.jpg"
+            articulos = respuesta;
 
-        },
-        {
-            id: 5,
-            nombre: "Comida Perro 5",
-            descripcion: "esta es la comida de perro numero 5",
-            cantidad: 1,
-            precio: 300,
-            img: "img/S3/perro/comida_perro-5.jpg"
+            crearElementos();
 
-        },
-        {
-            id: 6,
-            nombre: "Comida Perro 6",
-            descripcion: "esta es la comida de perro numero 6",
-            cantidad: 1,
-            precio: 750,
-            img: "img/S3/perro/comida_perro-6.jpg"
+        } else {
 
-        },
-        {
-            id: 7,
-            nombre: "Comida Perro 7",
-            descripcion: "esta es la comida de perro numero 7",
-            cantidad: 1,
-            precio: 90,
-            img: "img/S3/perro/comida_perro-7.jpg"
-
-        },
-        {
-            id: 8,
-            nombre: "Comida Perro 8",
-            descripcion: "esta es la comida de perro numero 8",
-            cantidad: 1,
-            precio: 210,
-            img: "img/S3/perro/comida_perro-8.jpg"
+            console.log("hubo un error al cargar los datos del JSON.... Intente de nuevo");
 
         }
-    ];
+
+    });
+
+    // CARGA LA CANTIDAD DE PRODUCTOS EN EL CONTADOR DEL CARRITO
+    cargarCartWidgetCount('cartWidgetCount');
 
     //CREAMOS LA PEQUEÑA LISTA DE ARTICULOS EN LA PAGINA PRINCIPAL DE SITIO
-    for (let i = 0; i < articulos.length - 2; i++) {
+    function crearElementos() {
 
-        $('#contenedor').append(`
+        for (let i = 0; i < 6; i++) {
+
+            $('#contenedor').append(`
 
             <!-- Elemento de la seccion-3 -->
             <div class="seccion-3__grid__elemento">
 
-                <a href='#'>
+            <a href='producto.html' id='producto-seleccionado'>
 
-                    <img class="seccion-3__grid__elemento__img" src="${articulos[i].img}" alt="comida_perro">
+                    <img class="seccion-3__grid__elemento__img" id="imagen" src="${articulos[i].img}" alt="comida_perro">
 
-                    <p id="id-articulo">${articulos[i].id}</p>
+                    <p id="id-producto">${articulos[i].id}</p>
 
                     <h4 class="seccion-3__grid__elemento__titulo" id="nombre">${articulos[i].nombre}</h4>
 
-                    <p class="seccion-3__grid__elemento__descripcion">${articulos[i].descripcion}</p>
+                    <p class="seccion-3__grid__elemento__descripcion" id="descripcion">${articulos[i].descripcion}</p>
 
                 </a>
                 
@@ -125,8 +66,9 @@ $(() => {
     
         `);
 
-    }
+        }
 
+    }
     // ASIGNAMOS EL EVENT LISTENER AL CONTENEDOR DE LOS PRODUCTOS
 
     $('#contenedor').click(function (event) {
@@ -137,13 +79,31 @@ $(() => {
 
             if (target.id == 'agregar') {
 
-                agregarProducto(target.parentElement);
+                let articulo = crearObjeto(target.parentElement);
+
+                cartWidgetCount(articulo.cantidad);
+
+                almacenarEnLocalStorage('elementos', articulo);
+
+                return;
+
+            }
+
+            if (target.id == 'producto-seleccionado') {
+
+                let articulo = crearObjeto(target.parentElement);
+
+                almacenarEnStorageProductoSeleccionado('seleccionado', articulo);
+
+                return;
 
             }
 
             if (target.id == 'mas' || target.id == 'menos') {
 
                 cambiarCantidad(target);
+
+                return;
 
             }
 
@@ -172,102 +132,141 @@ $(() => {
     }
 
     //SE CREA UN OBJETO DE LA CLASE ARTICULO PARA LUEGO PASARLO A JSON
-    const agregarProducto = target => {
+    const crearObjeto = target => {
 
-        pasarAJson(
-            new Articulo(
-                target.querySelector("#id-articulo").textContent,
-                target.querySelector("#nombre").textContent,
-                parseInt(target.querySelector("#cantidad").value),
-                parseFloat(target.querySelector("#precio").textContent)
-            )
-        );
+        let producto;
+
+        for (const articulo of articulos) {
+
+            if (articulo.id == target.querySelector("#id-producto").textContent) {
+
+                producto = {
+
+                    id: articulo.id,
+                    nombre: articulo.nombre,
+                    descripcion: articulo.descripcion,
+                    cantidad: parseInt(target.querySelector("#cantidad").value),
+                    precio: articulo.precio,
+                    img: articulo.img
+
+                };
+
+            }
+
+        }
+
+        return producto;
 
     }
 
-    //SE PASAN A JSON TODOS CADA OBJETO SELECCIONADO PARA PODER ALMACENARLOS EN EL LOCALSTORAGE
-    function pasarAJson(articulo) {
-        let json = JSON.stringify(articulo);
 
-        almacenarEnStorage(articulo.id, json);
+    const cartWidgetCount = (cantidad) => {
+
+        const clave = 'cartWidgetCount';
+        const valor = cantidad;
+
+        if (!localStorage.getItem(clave)) {
+
+            localStorage.setItem(clave, valor);
+
+        } else {
+
+            let dataStorage = JSON.parse(localStorage.getItem(clave));
+            dataStorage += valor;
+            localStorage.setItem(clave, dataStorage);
+
+        }
+
+        cargarCartWidgetCount(clave);
 
     }
 
-    function almacenarEnStorage(clave, valor) {
+    function cargarCartWidgetCount(clave) {
+
+        if (!localStorage.getItem(clave)) {
+
+            localStorage.setItem(clave, 0);
+
+        } else {
+
+            $('#cartWidget-Counter').html(`${localStorage.getItem(clave)}`)
+
+        }
+
+    };
+
+    function almacenarEnLocalStorage(clave, valor) {
         /*
     EN ESTA CONDICION, ESTAMOS DICIENDO: 
     "SI NO EXISTE LA VARIABLE DE localStorage clave"
     REALIZAREMOS LO SIGUIENTE
    */
 
-        if (!localStorage.getItem(clave)) {
-            //AGREGAMOS EL OBJETO AL LOCALSTORAGE
-            localStorage.setItem(clave, valor);
+        let elementos;
+
+        elementos = obtenerProductosLocalStorage();
+
+        if (elementos.length === 0) {
+
+            elementos.push(valor);
+
         } else {
-            // SI YA EXISTIA ENTONCES LA OBTENEMOS Y GUARDAMOS EN UNA VARIABLE
-            let dataStorage = JSON.parse(localStorage.getItem(clave));
-            //MODIFICAMOS SOLO LA CANTIDAD
-            dataStorage.cantidad = dataStorage.cantidad + JSON.parse(valor).cantidad;
-            //SOBREESCRIBIMOS LA VARIABLE de localStorage
-            localStorage.setItem(clave, JSON.stringify(dataStorage));
+
+            let yaExiste = false;
+
+            for (const elemento of elementos) {
+
+                if (elemento.id === valor.id) {
+
+                    elemento.cantidad += valor.cantidad;
+
+                    yaExiste = true;
+
+                }
+
+            }
+
+            if (!yaExiste) elementos.push(valor);
+
         }
 
-        // agregarAlCarrito();
+        localStorage.setItem(clave, JSON.stringify(elementos));
+
     }
 
-    /* function agregarAlCarrito() {
 
-        var precioTotal = 0;
+    /* Funcion para almanecar SOLO 1 producto, para utilizarlo luego en la vista de producto.html */
+    function almacenarEnStorageProductoSeleccionado(clave, valor) {
 
-        // ASIGNO EL ELMENTO A UNA VARIABLE
-        let carrito = document.getElementById("carrito");
 
-        // VACIO EL HTML DEL CARRITO ANTES DE AGREGAR LOS ELEMENTOS
-        carrito.innerHTML = "";
+        if (localStorage.getItem(clave)) {
 
-        //CREA LA CABECERA DEL CARRITO DE ARTICULOS
-        carrito.innerHTML += `
-        <div>
-            <h5>Nombre</h5>
-            <h5>Cantidad</h5>
-            <h5>Precio</h5>
-        </div>
-            `;
+            //ELIMINO EL OBJETO DEL LOCALSTORAGE SI YA EXISTIA
+            localStorage.removeItem(clave);
 
-        // RECORRE TODO EL CONTENIDO DEL LOCALSTORAGE ATRAVES DE SU KEY
-        for (let i = 0; i < localStorage.length; i++) {
-            let clave = localStorage.key(i);
+        }
+        //AGREGAMOS EL OBJETO AL LOCALSTORAGE
+        localStorage.setItem(clave, JSON.stringify(valor));
 
-            //USADO PARA ALMACENAR EL OBJETO GUARDADO EN EL LOCALSTORAGE
-            const elemento = JSON.parse(localStorage.getItem(clave));
+    }
 
-            // SE CREA UN DIV PARA ALMACENAR LOS ELEMENTOS DEL CARRITO
-            const container = document.createElement("div");
-            container.classList.add("carrito__articulo");
+    function obtenerProductosLocalStorage() {
 
-            container.innerHTML = `
-            <p class="carrito__articulo__nombre" id="${elemento.id}">${elemento.nombre
-            }</p>
-            <p class="carrito__articulo__cantidad">${elemento.cantidad}</p>
-            <p class="carrito__articulo__precio">${elemento.precio * elemento.cantidad
-            } $</p>
-        `;
+        let elementos;
 
-            //SUMA EL PRECIO TOTAL DE TODOS LOS ARTICULOS
-            precioTotal += elemento.precio * elemento.cantidad;
+        if (localStorage.getItem('elementos') === null) {
 
-            document.getElementById("carrito").appendChild(container);
+            elementos = [];
+
+        } else {
+
+            elementos = JSON.parse(localStorage.getItem('elementos'));
+
         }
 
-        const total = document.createElement("div");
-        total.className = "total";
-        total.innerHTML = `
-                <h5>Total:</h5>
-                <p>${precioTotal}$</p>
-            `;
+        return elementos;
 
-        document.getElementById("carrito").appendChild(total);
-    } */
+    }
 
 })
 
