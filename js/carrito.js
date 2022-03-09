@@ -1,5 +1,7 @@
 $(() => {
 
+    const alertas = new Alertas();
+
     let elementos = JSON.parse(localStorage.getItem('elementos'));
     let esEnvio = false;
 
@@ -52,7 +54,6 @@ $(() => {
 
             }
 
-
         }
 
         cargarPrecios();
@@ -69,6 +70,8 @@ $(() => {
             if (target.id == 'eliminar') {
 
                 eliminarProducto(target.parentElement.id);
+
+                alertas.deleted();
 
                 return;
 
@@ -147,6 +150,22 @@ $(() => {
 
         cargarElementos();
         cargarCartWidgetCount('cartWidgetCount');
+
+        alertas.deleted();
+
+    })
+
+    $('#pagar').click(() => {
+
+        if (elementos == null || elementos.length == 0) {
+
+            alertas.error();
+
+        } else {
+
+            alertas.success();
+
+        }
 
     })
 
@@ -230,7 +249,7 @@ $(() => {
             $('#cartWidget-Counter').html('0');
 
         } else {
-            
+
             $('#cartWidget-Counter').html(`${localStorage.getItem(clave)}`)
 
         }

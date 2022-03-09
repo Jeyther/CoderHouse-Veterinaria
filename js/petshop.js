@@ -1,5 +1,7 @@
 $(() => {
 
+    const alertas = new Alertas();
+
     let pagina = 1;
 
     // TODOS LOS PRODUCTOS
@@ -168,6 +170,8 @@ $(() => {
                 cartWidgetCount(articulo.cantidad);
 
                 almacenarEnLocalStorage('elementos', articulo);
+
+                alertas.added();
 
                 return;
 

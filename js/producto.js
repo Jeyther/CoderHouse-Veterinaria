@@ -1,5 +1,7 @@
 $(() => {
 
+    const alertas = new Alertas();
+
     //Obtenemos el producto unico que fue seleccionado del LocalStorage
     let productoSeleccionado = JSON.parse(localStorage.getItem('seleccionado'));
     let productosRecomendados = [];
@@ -183,6 +185,8 @@ $(() => {
 
                 almacenarEnStorage('elementos', articulo);
 
+                alertas.added();
+
                 return;
 
             }
@@ -222,6 +226,8 @@ $(() => {
                 cartWidgetCount(articulo.cantidad);
 
                 almacenarEnStorage('elementos', articulo);
+                
+                alertas.added();
 
                 return;
 
