@@ -288,7 +288,22 @@ $(() => {
         }).addTo(mapa);
 
     }
-    
+
+    $('#enviar-formulario').click((e) => {
+
+        e.preventDefault();
+
+        var config = {};
+        $('input').each(function () {
+            config[this.name] = this.value;
+        });
+
+        console.log(config);
+
+        alertas.form();
+
+    })
+
 })
 
 

@@ -356,7 +356,7 @@
             <div class="seccion-6__container__ubicacion">
 
                 <div class="seccion-6__container__ubicacion__mapa" id="mapa"></div>
-                
+
                 <p class="seccion-6__container__ubicacion__horario">Atención: Lunes a Sábado de 9:00am a 7:00pm</p>
                 <h3 class="seccion-6__container__ubicacion__direccion">Avenida Paseo de la República 2400, Agrupación
                     San Eugenio,
@@ -381,27 +381,27 @@
 
                 <div class="seccion-7__formulario__contenedor">
 
-                    <input class="seccion-7__formulario__contenedor__campo__nombre" type="text"
+                    <input class="seccion-7__formulario__contenedor__campo__nombre" type="text" name="nombre"
                         placeholder="NOMBRE Y APELLIDO">
 
                     <select class="seccion-7__formulario__contenedor__campo__servicio" name="temas">
                         <option disabled selected>Tipo de Servicio</option>
                         <option value="nuevos">Consulta Canina</option>
                         <option value="rentables">Consulta Felina</option>
-                        <option value="divertidos">Consluta General</option>
+                        <option value="divertidos">Consulta General</option>
                         <option value="futuro">Otros</option>
                     </select>
 
-                    <input class="seccion-7__formulario__contenedor__campo__correo" type="email"
+                    <input class="seccion-7__formulario__contenedor__campo__correo" type="email" name="correo"
                         placeholder="CORREO ELECTRONICO">
 
                     <textarea class="seccion-7__formulario__contenedor__campo__mensaje" cols="30" rows="10"
-                        placeholder="MENSAJE" value="1"></textarea>
+                        placeholder="MENSAJE" name="mensaje" value="1"></textarea>
 
 
                 </div>
                 <div class="seccion-7__formulario__boton">
-                    <input class="seccion-7__formulario__boton__enviar" type="submit" value="Enviar">
+                    <button id="enviar-formulario" class="seccion-7__formulario__boton__enviar" type="submit">Enviar</button>
                 </div>
             </fieldset>
 

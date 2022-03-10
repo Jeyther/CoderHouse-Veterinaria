@@ -65,4 +65,15 @@ class Alertas {
         })
     }
 
+    form() {
+
+        Swal.fire(
+
+            'Muy Bien',
+            'Tus datos han sido enviados exitosamente',
+            'success'
+
+        )
+
+    }
 }
