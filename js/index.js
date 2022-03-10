@@ -27,6 +27,9 @@ $(() => {
     // CARGA LA CANTIDAD DE PRODUCTOS EN EL CONTADOR DEL CARRITO
     cargarCartWidgetCount('cartWidgetCount');
 
+    // CARGAMOS LOS DATOS DEL MAPA Y MOSTRAMOS EN PANTALLA
+    cargarMapa();
+
     //CREAMOS LA PEQUEÑA LISTA DE ARTICULOS EN LA PAGINA PRINCIPAL DE SITIO
     function crearElementos() {
 
@@ -87,7 +90,7 @@ $(() => {
 
                 almacenarEnLocalStorage('elementos', articulo);
 
-                alertas.agregadoAlCarrito();
+                alertas.added();
 
                 return;
 
@@ -272,6 +275,20 @@ $(() => {
 
     }
 
+    function cargarMapa() {
+
+        const tilesProvider = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+
+        let mapa = L.map('mapa').setView([-12.087050, -77.025137], 18);
+
+        let marker = L.marker([-12.087050, -77.025137]).addTo(mapa);
+
+        L.tileLayer(tilesProvider, {
+            maxZoom: 18
+        }).addTo(mapa);
+
+    }
+    
 })
 
 
