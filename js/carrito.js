@@ -145,12 +145,7 @@ $(() => {
 
     $('#vaciar-carrito').click(() => {
 
-        localStorage.clear();
-        elementos = [];
-
-        cargarElementos();
-        cargarCartWidgetCount('cartWidgetCount');
-
+        vaciarCarrito();
         alertas.deleted();
 
     })
@@ -163,6 +158,7 @@ $(() => {
 
         } else {
 
+            vaciarCarrito();
             alertas.success();
 
         }
@@ -216,6 +212,16 @@ $(() => {
         localStorage.setItem('elementos', JSON.stringify(elementos));
         $('#contenedor-productos').html('');
         cargarElementos();
+
+    }
+
+    function vaciarCarrito() {
+
+        localStorage.clear();
+        elementos = [];
+
+        cargarElementos();
+        cargarCartWidgetCount('cartWidgetCount');
 
     }
 
