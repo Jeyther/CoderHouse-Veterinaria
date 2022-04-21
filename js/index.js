@@ -166,7 +166,6 @@ $(() => {
 
     }
 
-
     const cartWidgetCount = (cantidad) => {
 
         const clave = 'cartWidgetCount';
@@ -241,7 +240,6 @@ $(() => {
 
     }
 
-
     /* Funcion para almanecar SOLO 1 producto, para utilizarlo luego en la vista de producto.html */
     function almacenarEnStorageProductoSeleccionado(clave, valor) {
 
@@ -283,9 +281,7 @@ $(() => {
 
         let marker = L.marker([-12.087050, -77.025137]).addTo(mapa);
 
-        L.tileLayer(tilesProvider, {
-            maxZoom: 18
-        }).addTo(mapa);
+        L.tileLayer(tilesProvider).addTo(mapa);
 
     }
 
@@ -306,15 +302,3 @@ $(() => {
 
 })
 
-
-//SUPUESTAMENTE PARA VER DONDE ESTA EL SCROLL 
-/* window.addEventListener('scroll',()=>{
-    const sectionPos = skillsSection.getBoundingClientRect().top;
-    const screenPos = window.innerHeight;
-
-    if (sectionPos < screenPos){
-        showProgress();
-    } else{
-        hideProgress();
-    }
-} */
